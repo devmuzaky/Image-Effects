@@ -1,4 +1,18 @@
-function init() {
+async function init() {
+
+    let rustApp = null;
+
+    try{
+        rustApp = await import('../pkg');
+        console.log("Rust app loaded successfully");
+    }catch (e){
+        console.error("Failed to load rust app", e);
+        return;
+    }
+
+    console.log(rustApp)
+
+
     const input = document.getElementById('upload');
     if (!input) {
         console.error('Input element not found in DOM');

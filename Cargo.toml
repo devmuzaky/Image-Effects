@@ -9,4 +9,4 @@ edition = "2021"
 crate-type = ["cdylib"]  # Enables building a WebAssembly dynamic library
 
 [dependencies]
-wasm-bindgen = "0.2.84"
+wasm-bindgen = "0.2.84" # Enables communication between Rust and JavaScript
