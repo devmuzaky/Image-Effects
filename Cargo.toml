@@ -10,3 +10,10 @@ crate-type = ["cdylib"]  # Enables building a WebAssembly dynamic library
 
 [dependencies]
 wasm-bindgen = "0.2.84" # Enables communication between Rust and JavaScript
+base64 = "0.21.0"
+image = "0.24.6"
+
+[dependencies.web-sys] # Enables using Web APIs
+version = "0.3.50"
+features = ["console"]
+

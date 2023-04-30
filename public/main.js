@@ -10,7 +10,7 @@ async function init() {
         return;
     }
 
-    console.log(rustApp)
+    // console.log(rustApp)
 
 
     const input = document.getElementById('upload');
