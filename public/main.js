@@ -9,14 +9,7 @@ async function init() {
         return;
     }
 
-
-
     const input = document.getElementById('upload');
-    if (!input) {
-        console.error('Input element not found in DOM');
-        return;
-    }
-
 
     /*
     FileReader() is a built-in function of JS that allows us to read the contents of files stored on a user's computer (or device).
@@ -26,25 +19,24 @@ async function init() {
     fileReader.onload = () => {
         let base64 = fileReader.result.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
         let img_data_url = rustApp.grayscale(base64);
-
-        document.getElementById('new-img').setAttribute(
-            'src', img_data_url
-        )
-
+        document.getElementById('new-img').setAttribute('src', img_data_url)
+        // document.getElementById('spinner').style.display = 'none';
     }
+
+
+    // fileReader.addEventListener('upload', () => {
+    //
+    //     document.getElementById('spinner').style.display = 'block';
+    // })
+
 
     /*
     * change event is fired when the value of the input element has been changed.
     * readAsText() is a built-in function of JS that reads the contents of the specified Blob or File.
     * */
     input.addEventListener('change', () => {
-        // const file = input.files[0];
-        // fileReader.readAsText(file);
-
         fileReader.readAsDataURL(input.files[0]);
     });
-
-
 }
 
 init();
