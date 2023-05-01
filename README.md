@@ -15,7 +15,7 @@ Demo link :
 
 Demo Video
 ----------
-
+ file:///home/moe/Downloads/Video%20Demo.mp4
 
 Technologies
 ------------
