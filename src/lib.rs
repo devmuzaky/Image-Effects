@@ -1,23 +1,35 @@
-use std::ops::Index;
-use wasm_bindgen::prelude::*;   // import wasm_bindgen macros into scope so we can use them
-use web_sys::console::log_1 as log;    // import log_1 function from web_sys::console module into scope so we can use it to log to the browser console
-use base64::decode; // import decode function from base64 crate into scope so we can use it to decode base64 encoded strings
-use image::load_from_memory; // import load_from_memory function from image crate into scope so we can use it to load images from memory
-use image::ImageOutputFormat::Png; // import Png enum from ImageOutputFormat module into scope so we can use it to write images to buffer in PNG format
+use wasm_bindgen::prelude::*;
+use web_sys::console::log_1 as log;
+use base64::{ encode, decode };
+use image::load_from_memory;
+use image::ImageOutputFormat::Png;
 
+#[wasm_bindgen]
 
-#[wasm_bindgen] // macro to generate JS bindings for Rust functions
+pub fn grayscale(encoded_file: &str)-> String {
+    pub fn grayscale(encoded_file: &str) -> String {
+        log(&"Grayscale called".into());
 
-pub fn grayscale(encoded_file: &str) {
-    log(&"Grayscale called".into()); // log to browser console
+        let base64_to_vector = decode(encoded_file).unwrap();
+        log(&"Image decoded".into());
 
-    let base64_to_vector = decode(encoded_file).unwrap(); // convert base64 encoded string to a Vec<u8>
-    let mut img = load_from_memory(&base64_to_vector).unwrap(); // load image from memory
-    img = img.grayscale(); // convert image to grayscale
+        let mut img = load_from_memory(&base64_to_vector).unwrap();
+        log(&"Image loaded".into());
 
+        img = img.grayscale();
+        log(&"Grayscale effect applied".into());
 
-    let mut buffer = vec![];
-    img.write_to(&mut buffer, Png).unwrap(); // write image to buffer in PNG format
+        let mut buffer = vec![];
+        img.write_to(&mut buffer, Png).unwrap();
+        log(&"New image written".into());
+
+        let encoded_img = encode(&buffer);
+        let data_url = format!(
+            "data:image/png;base64,{}",
+            encoded_img
+        );
+
+        data_url
 
 
 }

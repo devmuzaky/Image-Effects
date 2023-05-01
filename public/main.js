@@ -2,15 +2,13 @@ async function init() {
 
     let rustApp = null;
 
-    try{
+    try {
         rustApp = await import('../pkg');
-        console.log("Rust app loaded successfully");
-    }catch (e){
+    } catch (e) {
         console.error("Failed to load rust app", e);
         return;
     }
 
-    // console.log(rustApp)
 
 
     const input = document.getElementById('upload');
@@ -27,8 +25,12 @@ async function init() {
 
     fileReader.onload = () => {
         let base64 = fileReader.result.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
-        console.log(input.files[0]);
-        console.log(base64);
+        let img_data_url = rustApp.grayscale(base64);
+
+        document.getElementById('new-img').setAttribute(
+            'src', img_data_url
+        )
+
     }
 
     /*

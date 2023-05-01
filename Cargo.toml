@@ -14,6 +14,6 @@ base64 = "0.21.0"
 image = "0.24.6"
 
 [dependencies.web-sys] # Enables using Web APIs
-version = "0.3.50"
+web-sys = "0.3.61"
 features = ["console"]
 
