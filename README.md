@@ -15,7 +15,8 @@ Demo link :
 
 Demo Video
 ----------
- file:///home/moe/Downloads/Video%20Demo.mp4
+https://user-images.githubusercontent.com/55113727/235548185-6c6acc9c-7267-4956-be44-7baa9cc111b0.mp4
+
 
 Technologies
 ------------
