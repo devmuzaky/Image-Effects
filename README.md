@@ -15,7 +15,8 @@ Demo link :
 
 Video Demo
 ----------
-https://user-images.githubusercontent.com/55113727/235548185-6c6acc9c-7267-4956-be44-7baa9cc111b0.mp4
+
+[Screencast from 2023-05-02 02-34-29.webm](https://user-images.githubusercontent.com/55113727/235549447-2f667a58-3034-4352-b29e-3943def3ecc3.webm)
 
 
 Technologies
