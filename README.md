@@ -10,7 +10,7 @@ Purpose
 🎯 Image Effects is a web application that allows users to upload their colored images and convert them to black and
 white.
 
-Demo link : 
+Demo link : https://image-effects-livid.vercel.app/
 ----
 
 Video Demo
